@@ -16,6 +16,9 @@
       <div class="d-flex">
         <form action="{{ route('todo.complete', $todo->id) }}" class="px-3 my-auto todo-status-form">
           <input type="checkbox" class="form-control todo-status-button" name="id" value={{ $todo->content }} @if ($todo->is_completed) checked @endif>
+          {{-- checkedはチェックされた状態を表す属性 --}}
+          {{-- $todo->is_completed は ToDo アイテムが完了しているかどうかを表すブール値を持っています。 --}}
+          {{-- チェックされた項目にチェックを入れる記述 --}}
         </form>
         <a href="{{ route('todo.show', $todo->id) }}" class="list-group-item list-group-item-action">
           {{ $todo->content }}

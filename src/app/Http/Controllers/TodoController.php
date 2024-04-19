@@ -85,9 +85,16 @@ class TodoController extends Controller
     public function complete($id)
     {
         $todo = $this->todo->find($id);
+        // complete()の引数で受け取った$idをもとに、対象のレコードを1件取得しています
         $todo->is_completed = !$todo->is_completed;
+        // $todo->is_completedがtrue（完了状態）であれば、false（未完了状態）になり、
+        // false（未完了状態）であれば、true（完了状態）になります。
         $todo->save();
+        // save()を用いてUPDATE文を実行してレコードの内容を更新します。
         return response()->json(['is_completed' => $todo->is_completed]);
+        // JSON 形式のレスポンスを返しています。
+        // 具体的には、is_completed キーには $todo->is_completed の値が含まれます。
+        // "is_completed": trueで返される
     }
 
 }
