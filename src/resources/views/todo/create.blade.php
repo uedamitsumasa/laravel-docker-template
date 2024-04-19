@@ -1,5 +1,7 @@
 @extends('layouts.base')
+{{-- 親のファイルの継承 --}}
 @section('content')
+{{-- @yield部分に召喚されるトンネルの入り口 --}}
 <div class="row justify-content-center">
           <div class="col-md-8">
           @include('layouts.message')
@@ -25,3 +27,4 @@
           </div>
         </div>
 @endsection
+@yield部分に召喚されるトンネルの出口

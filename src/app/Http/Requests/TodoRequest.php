@@ -12,6 +12,7 @@ class TodoRequest extends FormRequest
      * @return bool
      */
     public function authorize()
+    // リクエストが許可されているかどうかを判断
     {
         return true;
     }
@@ -25,6 +26,9 @@ class TodoRequest extends FormRequest
     {
         return [
             'content' => 'required|max:255',
+            // 最大255文字であることこと、空欄で無い事を指定
+            // contentはバリデーションを行いたいフォームの入力フィールドの名前をキーとして指定している
+        
         ];
     }
 
@@ -35,5 +39,5 @@ class TodoRequest extends FormRequest
             'content.max' => 'ToDoは :max 文字以内で入力してください。',
         ];
     }
-    
+
 }

@@ -11,3 +11,6 @@ class Todo extends Model
         'content'
     ];
 }
+
+// Eloquentモデルを定義しています。
+//指定したカラムのみがfillで一括設定されるようにする為
